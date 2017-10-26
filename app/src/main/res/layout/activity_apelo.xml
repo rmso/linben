@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/color">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/toponovo"
+        android:src ="@drawable/toponovo"
+        android:id="@+id/imageView6"
+        android:layout_above="@+id/video" />
+    <Button
+        android:id="@+id/voltarseta"
+        android:layout_width="15dp"
+        android:layout_height="25dp"
+        android:background="@drawable/voltartopo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp" />
+    <Button
+        android:id="@+id/ajuda"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/duvidatopo"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/voltarseta"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp" />
+
+    <Button
+        android:id="@+id/video"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/addvideobranco"
+        android:onClick="capturarVideo"
+        android:layout_below="@+id/ajuda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Descrição"
+        android:id="@+id/t_descricao"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/video"
+        android:layout_toEndOf="@+id/voltarseta"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:background="#61cdcdcd"
+        android:id="@+id/descricao"
+        android:layout_below="@+id/t_descricao"
+        android:layout_alignStart="@+id/hemocentro"
+        android:textColor="@color/colorMain"
+        android:gravity="top" />
+
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="35dp"
+        android:text="Local de doação"
+        android:id="@+id/t_local_doacao"
+        style="@style/LetrasPreta"
+        android:textSize="20dp"
+        android:layout_below="@+id/descricao"
+        android:layout_alignStart="@+id/descricao" />
+
+    <Spinner
+        android:id="@+id/estado"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="#61cdcdcd"
+        android:layout_below="@+id/t_local_doacao"
+        android:layout_alignStart="@+id/t_local_doacao"
+        android:text= "Estado"
+        android:layout_alignEnd="@+id/t_hemocentro">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/cidade"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="#94cdcdcd"
+        android:layout_below="@+id/t_local_doacao"
+        android:layout_toEndOf="@+id/video"
+        android:text= "Cidade"
+        android:layout_alignEnd="@+id/concluir" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="Hemocentro"
+        android:id="@+id/t_hemocentro"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/estado"
+        android:layout_toStartOf="@+id/video"
+        android:layout_marginTop="10dp" />
+
+    <Spinner
+        android:id="@+id/hemocentro"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:background="#61cdcdcd"
+        android:text= "Selecione o posto de coleta"
+        android:layout_below="@+id/estado"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp">
+    </Spinner>
+
+    <Button
+        android:id="@+id/concluir"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:background="@drawable/concluircad"
+        android:layout_below="@+id/hemocentro"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignEnd="@+id/ajuda"
+        android:layout_alignStart="@+id/voltarseta" />
+</RelativeLayout>

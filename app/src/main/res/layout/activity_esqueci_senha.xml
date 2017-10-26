@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:clickable="true"
+    android:contextClickable="true"
+    android:focusableInTouchMode="false"
+    android:background="@color/colorMain">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="400px"
+        android:layout_height="350px"
+        android:src="@drawable/logo"
+        android:layout_marginTop="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/textp"
+        android:layout_width="400px"
+        android:layout_height="200px"
+        android:src="@drawable/senhatexto"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/logo" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:background="@color/color"
+        android:ems="10"
+        android:textColor="@color/colorMain"
+        android:textAlignment="center"
+        android:id="@+id/email"
+        android:singleLine="true"
+        android:hint="Insira seu e-mail"
+        android:textColorHint="@color/colorMain"
+        android:layout_above="@+id/enviar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp" />
+
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_height="25dp"
+        android:layout_width="150dp"
+        android:background="@color/colorMain"
+        android:text="Login"
+        android:textSize="12dp"
+        style="@style/LetrasBranca"
+        android:layout_above="@+id/bt_novo_usuario"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bt_novo_usuario"
+        android:layout_height="25dp"
+        android:layout_width="5dp"
+        android:background="@color/colorMain"
+        android:text="Novo usuário"
+        android:textSize="12dp"
+        style="@style/LetrasBranca"
+        android:layout_above="@+id/bt_ajuda"
+        android:layout_alignEnd="@+id/bt_ajuda"
+        android:layout_alignStart="@+id/bt_ajuda" />
+
+    <Button
+        android:id="@+id/bt_ajuda"
+        android:layout_height="25dp"
+        android:layout_width="150dp"
+        android:background="@color/colorMain"
+        android:text="Ajuda"
+        android:textSize="12dp"
+        style="@style/LetrasBranca"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/bt_login" />
+
+
+
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="@drawable/enviarsenha"
+        android:id="@+id/enviar"
+        android:layout_marginBottom="32dp"
+        android:layout_above="@+id/bt_login"
+        android:layout_alignEnd="@+id/email"
+        android:layout_alignStart="@+id/email" />
+
+
+</RelativeLayout>

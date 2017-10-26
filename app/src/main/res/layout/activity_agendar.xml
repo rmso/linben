@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/agendartopo"
+        android:src ="@drawable/agendartopo"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/voltarseta"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:background="@drawable/voltartopo"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp" />
+    <Button
+        android:id="@+id/ajuda"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/duvidatopo"
+        android:layout_marginRight="5dp"
+        android:layout_alignTop="@+id/voltarseta"
+        android:layout_alignParentEnd="true" />
+
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:id="@+id/descricao"
+        android:background="@drawable/descriacaodoacao"
+        android:baselineAlignBottom="false"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="date"
+        android:background="#61cdcdcd"
+        android:id="@+id/data"
+        android:onClick="selecionarData"
+        android:textColor="@color/colorMain"
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/descricao"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/agendabotao"
+        android:id="@+id/agendar"
+        android:longClickable="false"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
