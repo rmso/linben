@@ -115,14 +115,7 @@ public class LoginActivity extends AppCompatActivity  {
         });
 
 
-        bt_esqueci_senha.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View v) {
-                                                   Intent i = new Intent(LoginActivity.this,EsqueciSenhaActivity.class);
-                                                   startActivity(i);
-                                               }
-                                           }
-        );
+
 
         bt_ajuda.setOnClickListener(new View.OnClickListener() {
                                                 @Override

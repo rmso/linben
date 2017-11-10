@@ -3,11 +3,6 @@ package com.example.samsung.linben;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
-import android.view.MenuInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,11 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -119,16 +112,7 @@ public class MenuActivity extends AppCompatActivity
             }
             return true;
         }
-        else if (id == R.id.wifi){
-            //so pra teste back vai ter que mudar depois
-            if (this.getClass().getSimpleName().equals("AlertWifiActivity")) {
-                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            } else {
-                Intent i = new Intent(this, AlertWifiActivity.class);
-                startActivity(i);
-            }
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -139,14 +123,6 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_minhas_causas) {
-
-        }else if (id == R.id.nav_editar) {
-            if (this.getClass().getSimpleName().equals("CadastroGotinhaActivity")) {
-                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            } else {
-                Intent i = new Intent(this, CadastroGotinhaActivity.class);
-                startActivity(i);
-            }
 
         } else if (id == R.id.nav_hemocentros) {
             if (this.getClass().getSimpleName().equals("HemocentroActivity")) {
