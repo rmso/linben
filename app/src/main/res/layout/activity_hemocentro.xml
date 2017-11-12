@@ -12,6 +12,31 @@
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true" />
 
+    <LinearLayout
+        android:id="@+id/ll_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/imv_titulo">
+
+        <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/maps"
+            android:layout_width="wrap_content"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@id/ll_map"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
     <Button
         android:id="@+id/btn_ver_rota"
         android:layout_width="wrap_content"
@@ -22,7 +47,8 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorMain"
         style="@style/LetrasBranca"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_link"
@@ -35,7 +61,8 @@
         android:textSize="16sp"
         android:layout_marginTop="5dp"
         android:clickable="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_nome"
@@ -47,6 +74,6 @@
         android:textColor="@android:color/black"
         android:text="Hemope - Fundação de Hematologia e Hemoterapia de Pernambuco"
         android:layout_above="@+id/tv_link" />
-
+    </LinearLayout>
 
 </RelativeLayout>
