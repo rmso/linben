@@ -16,8 +16,9 @@
         android:icon="@drawable/icone"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">>
-        <activity android:name=".LoginActivity"/>
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        >
+        <activity android:name=".LoginActivity" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".ApeloActivity" />
         <activity android:name=".ListaUsuarioActivity" />
@@ -27,7 +28,7 @@
         <activity android:name=".SobreActivity" />
         <activity android:name=".HemocentroActivity" />
         <activity android:name=".AjudaActivity" />
-        <activity android:name=".CriteriosDoacaoActivity"/>
+        <activity android:name=".CriteriosDoacaoActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
@@ -37,10 +38,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
+        </activity>
         <activity android:name=".DoacaoRegistradaActivity" />
         <activity android:name=".VerCausaActivity" />
-        <activity android:name=".ApoiarActivity"></activity>
+        <activity android:name=".ApoiarActivity" />
+        <activity android:name=".WebViewActivity"></activity>
     </application>
 
 </manifest>
