@@ -1,17 +1,17 @@
 package com.example.samsung.linben.database;
-import android.app.DatePickerDialog;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.*;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 
-import com.example.samsung.linben.entidades.*;
-
+import com.example.samsung.linben.entidades.Causa;
 import com.example.samsung.linben.entidades.Usuario;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Raquel on 01/07/2016.
@@ -35,6 +35,7 @@ public class DataBase extends SQLiteOpenHelper{
     private static final String CIDADE= "cidade";
     private static final String ESTADO = "estado";
     private static final String HEMOCENTRO = "hemocentro";
+    private static final String NOME = "nome";
 
     SQLiteDatabase db;
 
@@ -46,7 +47,7 @@ public class DataBase extends SQLiteOpenHelper{
 
     private static final String TABLE_CREATE_CAUSA =
             "CREATE TABLE CAUSA(id integer PRIMARY KEY AUTOINCREMENT," +
-                    "descricao VARCHAR(1000), cidade VARCHAR(20), estado VARCHAR(10), hemocentro VARCHAR(10));";
+                    "nome VARCHAR(25),descricao VARCHAR(1000), cidade VARCHAR(20), estado VARCHAR(10), hemocentro VARCHAR(10));";
 
     public DataBase(Context context){
 
@@ -138,6 +139,7 @@ public class DataBase extends SQLiteOpenHelper{
         db = this.getWritableDatabase();//pegando a referencia da classe DATABASE.
         ContentValues values = new ContentValues();
 
+        values.put(NOME, causa.getNome());
         values.put(DESCRICAO, causa.getDescricao());
         values.put(CIDADE, causa.getCidade());
         values.put(ESTADO, causa.getEstado());
@@ -159,10 +161,38 @@ public class DataBase extends SQLiteOpenHelper{
 
             do {
                 Causa causa = new Causa();
-                causa.setDescricao(cursor.getString(1));
-                causa.setCidade(cursor.getString(2));
-                causa.setEstado(cursor.getString(3));
-                causa.setHemocentro(cursor.getString(4));
+                causa.setNome(cursor.getString(1));
+                causa.setDescricao(cursor.getString(2));
+                causa.setCidade(cursor.getString(3));
+                causa.setEstado(cursor.getString(4));
+                causa.setHemocentro(cursor.getString(5));
+
+                adpCausas.add(causa);
+
+
+            } while (cursor.moveToNext());
+        }
+        return adpCausas;
+    }
+    public List<Causa> buscarCausas(){
+
+        db = this.getWritableDatabase();
+
+        List<Causa> adpCausas = new ArrayList<>();
+        String colunas [] = new String[]{ "nome", "descricao", "hemocentro", "cidade", "estado"};
+        Cursor cursor = db.query("CAUSA",colunas,null,null,null,null,null);
+
+        if (cursor.getCount() > 0){
+
+            cursor.moveToFirst();
+
+            do {
+                Causa causa = new Causa();
+                causa.setNome(cursor.getString(1));
+                causa.setDescricao(cursor.getString(2));
+                causa.setCidade(cursor.getString(3));
+                causa.setEstado(cursor.getString(4));
+                causa.setHemocentro(cursor.getString(5));
 
                 adpCausas.add(causa);
 

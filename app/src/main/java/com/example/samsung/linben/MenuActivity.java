@@ -11,58 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
-    private Button bt_ver1;
-    private Button bt_ver2;
-    private Button bt_ver3;
-    private Button bt_ver4;
-    private Button bt_criar;
 
-    ListView list;
-    String[] itemname ={
-            "Mariana",
-            "Claúdia",
-            "Júlio",
-            "Nathália",
-            "Fernanda",
-            "Felipe"
-    };
 
-    Integer[] imgid ={
-            R.drawable.fotoperfilvideo,
-            R.drawable.fotohome1,
-            R.drawable.fotohome2,
-            R.drawable.fotohome3,
-            R.drawable.fotohome4,
-            R.drawable.fotohome5
-    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        bt_ver1 =  (Button) findViewById(R.id.button2);
-        bt_ver2 =  (Button) findViewById(R.id.vermais2);
-        bt_ver3 =  (Button) findViewById(R.id.vermais3);
-        bt_ver4 =  (Button) findViewById(R.id.vermais4);
-
-
-        bt_ver1.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

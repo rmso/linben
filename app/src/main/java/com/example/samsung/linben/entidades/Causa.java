@@ -10,6 +10,7 @@ public class Causa {
     private String estado;
     private String cidade;
     private String hemocentro;
+    private String nome;
 
     public Causa (){
     }
@@ -54,8 +55,17 @@ public class Causa {
         this.hemocentro = hemocentro;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
     public String toString(){
-        return "Hemocentro: " +hemocentro+ " Cidade: " +cidade+ " Estado: " +estado + " Descrição: " +descricao;
+        return "Nome: "+nome+"Hemocentro: " +hemocentro+ " Cidade: " +cidade+ " Estado: " +estado + " Descrição: " +descricao;
     }
 
 }

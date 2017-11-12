@@ -6,8 +6,6 @@ import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -16,19 +14,12 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -49,6 +40,7 @@ public class ApeloActivity extends Activity {
     private Spinner cidade;
     private Spinner hemocentro;
     private EditText descricao;
+    private EditText nome;
     private Button btn_voltar;
     private Button btn_continuar;
     private Button btn_ajuda;
@@ -159,7 +151,8 @@ public class ApeloActivity extends Activity {
         btn_continuar = (Button) findViewById(R.id.concluir);
         btn_ajuda = (Button) findViewById(R.id.ajuda);
 
-        descricao = (EditText) findViewById(R.id.descricao);
+        descricao = (EditText) findViewById(R.id.descricao_causa);
+        nome = (EditText) findViewById(R.id.t_nome);
         cidade = (Spinner) findViewById(R.id.cidade);
         estado = (Spinner) findViewById(R.id.estado);
         hemocentro = (Spinner) findViewById(R.id.hemocentro);
@@ -287,6 +280,7 @@ public class ApeloActivity extends Activity {
     private void inserir() {
         try {
             Causa causa = new Causa();
+            causa.setNome(nome.getText().toString());
             causa.setDescricao(descricao.getText().toString());
             causa.setCidade(cidade.getSelectedItem().toString());
             causa.setEstado(estado.getSelectedItem().toString());
