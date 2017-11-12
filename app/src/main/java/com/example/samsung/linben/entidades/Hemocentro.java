@@ -7,15 +7,14 @@ package com.example.samsung.linben.entidades;
 public class Hemocentro {
 
     private String nome;
+    private String descricao;
+    private String site;
 
     public Hemocentro(String nome, String descricao, String site) {
         this.nome = nome;
         this.descricao = descricao;
         this.site = site;
     }
-
-    private String descricao;
-    private String site;
 
     public String getNome() {
         return nome;
