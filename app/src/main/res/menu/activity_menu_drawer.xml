@@ -12,10 +12,6 @@
             android:title="Minhas causas" />
 
         <item
-            android:id="@+id/nav_editar"
-            android:icon="@drawable/icon"
-            android:title="Registrar Gotinha" />
-        <item
             android:id="@+id/nav_ajuda"
             android:icon="@drawable/menuajuda"
             android:title="Ajuda" />

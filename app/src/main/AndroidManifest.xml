@@ -20,18 +20,12 @@
         <activity android:name=".LoginActivity"/>
         <activity android:name=".CadastroActivity" />
         <activity android:name=".ApeloActivity" />
-        <activity android:name=".AlertAproxChaveiroActivity" />
-        <activity android:name=".AlertAcessoNegadoActivity" />
-        <activity android:name=".AlertWifiActivity" />
         <activity android:name=".ListaUsuarioActivity" />
         <activity android:name=".ListaCausaActivity" />
         <activity android:name=".InicioActivity" />
         <activity android:name=".AgendarActivity" />
         <activity android:name=".SobreActivity" />
-        <activity android:name=".EsqueciSenhaActivity" />
-        <activity android:name=".EnviarActivity" />
         <activity android:name=".HemocentroActivity" />
-        <activity android:name=".CadastroGotinhaActivity" />
         <activity android:name=".AjudaActivity" />
         <activity android:name=".CriteriosDoacaoActivity"/>
         <activity
