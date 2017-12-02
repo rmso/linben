@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -16,7 +16,7 @@ import com.example.samsung.linben.entidades.Causa;
 /**
  * Created by Raquel on 04/07/2016.
  */
-public class ListaCausaActivity extends ActionBarActivity {
+public class ListaCausaActivity extends AppCompatActivity {
 
     public static final int CONST_TELA_TESTE1  = 1;
     private ArrayAdapter<Causa> adpCausas;
