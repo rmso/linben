@@ -43,15 +43,6 @@ public class CriteriosDoacaoActivity extends AppCompatActivity {
                                       }
         );
 
-        btn_sim.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
-                                             Intent i = new Intent(CriteriosDoacaoActivity.this, AgendarActivity.class);
-                                             startActivity(i);
-                                         }
-                                     }
-        );
-
         btn_nao.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {

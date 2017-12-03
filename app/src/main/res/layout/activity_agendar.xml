@@ -6,18 +6,6 @@
     android:orientation="vertical"
     android:background="@color/color">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/imageView"
-        android:background="@drawable/agendartopo"
-        android:src ="@drawable/agendartopo"
-        android:baselineAlignBottom="false"
-        android:clickable="true"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:id="@+id/voltarseta"
         android:layout_width="20dp"

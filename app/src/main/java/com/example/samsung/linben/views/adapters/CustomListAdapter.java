@@ -44,8 +44,4 @@ public class CustomListAdapter extends ArrayAdapter<String>{
         extratxt.setText("Description"+itemname[position]);
         return rowView;
     }
-
-
-
-
 }

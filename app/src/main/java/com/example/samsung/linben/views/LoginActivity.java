@@ -16,8 +16,6 @@ import com.example.samsung.linben.database.DataBase;
 
 
 public class LoginActivity extends AppCompatActivity  {
-
-
     private Button btn_listaUsuario;
     private Button btn_listarCausa;
     Button bt_novo_usuario;
@@ -26,18 +24,13 @@ public class LoginActivity extends AppCompatActivity  {
     Button bt_esqueci_senha;
     EditText email;
     EditText senha;
-
     private DataBase database;
     private SQLiteDatabase dbActions;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
             try {
                 database = new DataBase(this);
                 dbActions = database.getReadableDatabase();
@@ -52,9 +45,7 @@ public class LoginActivity extends AppCompatActivity  {
                 dlg.setMessage("Erro ao criar o banco!" + ex.getMessage());
                 dlg.setNegativeButton("OK", null);
                 dlg.show();
-
             }
-
 
         //chamada dos objetos
         btn_listaUsuario = (Button) findViewById(R.id.btn_listarUsuario);

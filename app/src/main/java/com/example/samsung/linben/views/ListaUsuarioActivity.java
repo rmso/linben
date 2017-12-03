@@ -40,7 +40,6 @@ public class ListaUsuarioActivity extends AppCompatActivity {
                 //CONTINUAR ESSE COISINHA
             }
 
-
             try {
                 database = new DataBase(this);
                 dbActions = database.getWritableDatabase();
@@ -53,7 +52,6 @@ public class ListaUsuarioActivity extends AppCompatActivity {
                 dlg.setMessage("Erro ao criar o banco!" + ex.getMessage());
                 dlg.setNegativeButton("OK", null);
                 dlg.show();
-
             }
         }
     }
@@ -61,7 +59,6 @@ public class ListaUsuarioActivity extends AppCompatActivity {
     public void onClick(View view){
         Intent i = new Intent(this,CadastroActivity.class);
         startActivityForResult(i,CONST_TELA_TESTE);
-
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         adpUsuarios = database.buscarUsuario(this);
