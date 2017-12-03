@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.samsung.linben.R;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

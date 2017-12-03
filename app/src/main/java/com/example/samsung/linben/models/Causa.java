@@ -1,4 +1,4 @@
-package com.example.samsung.linben.entidades;
+package com.example.samsung.linben.models;
 
 /**
  * Created by Raquel on 04/07/2016.

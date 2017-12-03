@@ -1,32 +1,21 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 import android.webkit.WebView;
 
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnPreparedListener;
-import android.net.Uri;
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.util.Log;
 
 
-import java.io.File;
+import com.example.samsung.linben.R;
 
 import java.io.File;
 

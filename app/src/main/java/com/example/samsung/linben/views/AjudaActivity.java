@@ -1,10 +1,9 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import com.example.samsung.linben.R;
 
 public class AjudaActivity extends AppCompatActivity {
 

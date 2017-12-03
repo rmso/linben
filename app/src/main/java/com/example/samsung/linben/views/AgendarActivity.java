@@ -1,14 +1,15 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+
+import com.example.samsung.linben.R;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -93,7 +94,6 @@ public class AgendarActivity extends AppCompatActivity {
             Calendar calendar = Calendar.getInstance();
             calendar.set(ano, mes, dia);
             Date data = calendar.getTime();
-
 
             DateFormat format = DateFormat.getDateInstance(DateFormat.MEDIUM);
             String dt = format.format(data);

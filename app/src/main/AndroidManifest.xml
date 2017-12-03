@@ -19,37 +19,40 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".CadastroActivity" />
-        <activity android:name=".ApeloActivity" />
-        <activity android:name=".ListaUsuarioActivity" />
-        <activity android:name=".ListaCausaActivity" />
-        <activity android:name=".InicioActivity" />
-        <activity android:name=".AgendarActivity" />
-        <activity android:name=".SobreActivity" />
-        <activity android:name=".HemocentroActivity" />
-        <activity android:name=".AjudaActivity" />
-        <activity android:name=".CriteriosDoacaoActivity" />
+        <activity android:name=".views.LoginActivity" />
+        <activity android:name=".views.CadastroActivity" />
+        <activity android:name=".views.ApeloActivity" />
+        <activity android:name=".views.ListaUsuarioActivity" />
+        <activity android:name=".views.ListaCausaActivity" />
+        <activity android:name=".views.InicioActivity" />
+        <activity android:name=".views.AgendarActivity" />
+        <activity android:name=".views.SobreActivity" />
+        <activity android:name=".views.HemocentroActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".views.MenuActivity" />
+        </activity>
+        <activity android:name=".views.AjudaActivity" />
+        <activity android:name=".views.CriteriosDoacaoActivity" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".views.MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DoacaoRegistradaActivity" />
-        <activity android:name=".VerCausaActivity" />
-        <activity android:name=".ApoiarActivity" />
-        <activity android:name=".WebViewActivity"></activity>
+        <activity android:name=".views.DoacaoRegistradaActivity" />
+        <activity android:name=".views.VerCausaActivity" />
+        <activity android:name=".views.ApoiarActivity" />
+        <activity android:name=".views.WebViewActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC3trX0PtV7S-o1H0xvN2n0t1WCish4s6M" />
 
-        <meta-data
+       <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
     </application>

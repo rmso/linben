@@ -1,17 +1,13 @@
 package com.example.samsung.linben.database;
-import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.*;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 
-import com.example.samsung.linben.entidades.*;
+import com.example.samsung.linben.models.*;
 
-import com.example.samsung.linben.entidades.Usuario;
-
-import java.util.Date;
+import com.example.samsung.linben.models.Usuario;
 
 /**
  * Created by Raquel on 01/07/2016.

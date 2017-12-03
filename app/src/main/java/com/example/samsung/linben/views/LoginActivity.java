@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.database.*;
 
+import com.example.samsung.linben.R;
 import com.example.samsung.linben.database.DataBase;
 
 

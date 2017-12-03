@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.content.Intent;
 import android.database.SQLException;
@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.samsung.linben.R;
 import com.example.samsung.linben.database.DataBase;
-import com.example.samsung.linben.entidades.Usuario;
+import com.example.samsung.linben.models.Usuario;
 
 /**
  * Created by Raquel on 23/06/2016.

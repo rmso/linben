@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.utility;
 
 import android.Manifest;
 import android.annotation.TargetApi;

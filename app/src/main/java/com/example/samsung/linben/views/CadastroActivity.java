@@ -1,8 +1,6 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.DialogInterface;
@@ -22,12 +20,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.samsung.linben.R;
 import com.example.samsung.linben.database.DataBase;
 
 import java.io.ByteArrayOutputStream;
@@ -37,11 +35,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
-import com.example.samsung.linben.entidades.Usuario;
+import com.example.samsung.linben.models.Usuario;
+import com.example.samsung.linben.utility.Utility;
 
 /**
  * Created by Raquel on 12/05/2016.

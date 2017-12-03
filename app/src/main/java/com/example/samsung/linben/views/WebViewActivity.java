@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views;
 
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import com.example.samsung.linben.R;
 
 public class WebViewActivity extends AppCompatActivity {
 

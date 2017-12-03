@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.utility;
 
 /**
  * Created by Raquel on 28/06/2016.

@@ -1,6 +1,4 @@
-package com.example.samsung.linben.entidades;
-
-import java.util.Date;
+package com.example.samsung.linben.models;
 
 /**
  * Created by Samsung on 01/07/2016.

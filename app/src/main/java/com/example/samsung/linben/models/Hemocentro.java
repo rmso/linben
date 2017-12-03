@@ -1,4 +1,4 @@
-package com.example.samsung.linben.entidades;
+package com.example.samsung.linben.models;
 
 /**
  * Created by Samsung on 09/11/2017.

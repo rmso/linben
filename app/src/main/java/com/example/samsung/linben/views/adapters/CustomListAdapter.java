@@ -1,25 +1,15 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.views.adapters;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.samsung.linben.database.DataBase;
-import com.example.samsung.linben.entidades.Causa;
-import com.example.samsung.linben.entidades.Usuario;
-
-import java.util.Date;
+import com.example.samsung.linben.R;
 
 /**
  * Created by dell on 15/06/2016.
