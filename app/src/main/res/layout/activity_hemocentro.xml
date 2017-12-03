@@ -4,27 +4,20 @@
     android:layout_height="match_parent"
     android:background="@color/color">
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="120dp"
-        android:id="@+id/imv_titulo"
-        android:background="@drawable/hemocentrotexto"
-        android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true" />
-
     <LinearLayout
         android:id="@+id/ll_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/imv_titulo">
+        android:layout_above="@id/ll_info">
 
-        <fragment
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/maps"
-            android:layout_width="wrap_content"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_height="wrap_content" />
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".MapsActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
     </LinearLayout>
 
     <LinearLayout
@@ -32,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_above="@id/ll_map"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -75,5 +67,4 @@
         android:text="Hemope - Fundação de Hematologia e Hemoterapia de Pernambuco"
         android:layout_above="@+id/tv_link" />
     </LinearLayout>
-
 </RelativeLayout>

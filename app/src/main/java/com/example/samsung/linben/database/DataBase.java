@@ -135,9 +135,7 @@ public class DataBase extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
 
         values.put(DESCRICAO, causa.getDescricao());
-        values.put(CIDADE, causa.getCidade());
-        values.put(ESTADO, causa.getEstado());
-        values.put(HEMOCENTRO, causa.getHemocentro());
+
 
         db.insertOrThrow("CAUSA", null, values);
     }
@@ -156,9 +154,6 @@ public class DataBase extends SQLiteOpenHelper{
             do {
                 Causa causa = new Causa();
                 causa.setDescricao(cursor.getString(1));
-                causa.setCidade(cursor.getString(2));
-                causa.setEstado(cursor.getString(3));
-                causa.setHemocentro(cursor.getString(4));
 
                 adpCausas.add(causa);
 

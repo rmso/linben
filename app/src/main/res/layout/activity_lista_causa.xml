@@ -6,10 +6,8 @@
     android:orientation="vertical"
     android:background="@color/colorMain">
 
-
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/listViewCausa"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/listViewCausa" />
 </RelativeLayout>

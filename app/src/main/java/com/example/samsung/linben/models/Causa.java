@@ -7,9 +7,9 @@ public class Causa {
 
     private int id;
     private String descricao;
-    private String estado;
-    private String cidade;
-    private String hemocentro;
+    private String nome;
+    private String tipoSanguineo;
+    private String tipoDoenca;
 
     public Causa (){
     }
@@ -30,32 +30,32 @@ public class Causa {
         this.descricao = descricao;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getNome() {
+        return nome;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getTipoSanguineo() {
+        return tipoSanguineo;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setTipoSanguineo(String tipoSanguineo) {
+        this.tipoSanguineo = tipoSanguineo;
     }
 
-    public String getHemocentro() {
-        return hemocentro;
+    public String getTipoDoenca() {
+        return tipoDoenca;
     }
 
-    public void setHemocentro(String hemocentro) {
-        this.hemocentro = hemocentro;
+    public void setTipoDoenca(String tipoDoenca) {
+        this.tipoDoenca = tipoDoenca;
     }
 
     public String toString(){
-        return "Hemocentro: " +hemocentro+ " Cidade: " +cidade+ " Estado: " +estado + " Descrição: " +descricao;
+        return " Descrição: " +descricao + "Nome: " +nome + "Tipo Sanguineo: " +tipoSanguineo + "Tipo de Doença:" + tipoDoenca;
     }
 
 }

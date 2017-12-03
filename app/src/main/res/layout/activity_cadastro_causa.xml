@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/color">
+
+
+    <Button
+        android:id="@+id/video"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/addvideobranco"
+        android:onClick="capturarVideo"
+        android:layout_below="@+id/ajuda"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv_nome"
+        style="@style/LetrasVinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome Completo"
+        android:layout_below="@id/video"
+        />
+
+    <EditText
+        android:id="@+id/et_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Joana Pereira da Silva"
+        android:layout_below="@id/tv_nome"/>
+
+    <TextView
+        android:id="@+id/tv_tipo_sanguineo"
+        style="@style/LetrasVinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo Sangíneo"
+        android:layout_below="@id/et_nome"
+        />
+
+    <EditText
+        android:id="@+id/et_tipo_sanguineo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="A+"
+        android:layout_below="@id/tv_tipo_sanguineo"/>
+
+    <TextView
+        android:id="@+id/tv_tipo_doenca"
+        style="@style/LetrasVinho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Doença"
+        android:layout_below="@id/et_tipo_sanguineo"
+        />
+
+    <EditText
+        android:id="@+id/et_tipo_doenca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Leucemia"
+        android:layout_below="@id/tv_tipo_doenca"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição"
+        android:id="@+id/t_descricao"
+        style="@style/LetrasVinho"
+        android:textAlignment="center"
+        android:layout_below="@id/et_tipo_doenca"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:background="#61cdcdcd"
+        android:id="@+id/tv_descricao"
+        android:layout_below="@+id/t_descricao"
+        android:textColor="@color/colorMain"
+        android:gravity="top" />
+
+
+    <Button
+        android:id="@+id/concluir"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/concluircad"
+        android:layout_marginBottom="5dp"/>
+
+</RelativeLayout>

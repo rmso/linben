@@ -25,15 +25,6 @@ public class CriteriosDoacaoActivity extends AppCompatActivity {
         btn_sim = (Button) findViewById(R.id.sim);
         btn_nao = (Button) findViewById(R.id.nao);
 
-        btn_voltar.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              Intent i = new Intent(CriteriosDoacaoActivity.this, VerCausaActivity.class);
-                                              startActivity(i);
-                                          }
-                                      }
-        );
-
         btn_ajuda.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
@@ -41,15 +32,6 @@ public class CriteriosDoacaoActivity extends AppCompatActivity {
                                               startActivity(i);
                                           }
                                       }
-        );
-
-        btn_nao.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
-                                             Intent i = new Intent(CriteriosDoacaoActivity.this, VerCausaActivity.class);
-                                             startActivity(i);
-                                         }
-                                     }
         );
 
     }

@@ -3,11 +3,14 @@ package com.example.samsung.linben.views;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,66 +19,68 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.samsung.linben.R;
+import com.example.samsung.linben.database.DataBase;
+import com.example.samsung.linben.models.Causa;
+import com.example.samsung.linben.views.adapters.CausaAdapter;
+import com.example.samsung.linben.views.adapters.RecycleViewClickHack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, RecycleViewClickHack {
     DrawerLayout drawer;
-    private Button bt_ver1;
-    private Button bt_ver2;
-    private Button bt_ver3;
-    private Button bt_ver4;
-    private Button bt_criar;
+    FloatingActionButton btn_nova_causa;
 
-    ListView list;
-    String[] itemname ={
-            "Mariana",
-            "Claúdia",
-            "Júlio",
-            "Nathália",
-            "Fernanda",
-            "Felipe"
-    };
+    RecyclerView rv_causa;
 
-    Integer[] imgid ={
-            R.drawable.fotoperfilvideo,
-            R.drawable.fotohome1,
-            R.drawable.fotohome2,
-            R.drawable.fotohome3,
-            R.drawable.fotohome4,
-            R.drawable.fotohome5
-    };
+    CausaAdapter causaAdapter;
+    List<Causa> causaList;
+
+    DataBase dataBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        causaList = new ArrayList<>();
+
+        rv_causa = findViewById(R.id.rv_causa);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_causa.setLayoutManager(linearLayoutManager);
+
+       // getReceitasFromDAO();
+
+        rv_causa.setAdapter(causaAdapter);
+
+        causaAdapter = new CausaAdapter(causaList);
+        rv_causa.setAdapter(causaAdapter);
+        causaAdapter.setRecycleViewClick(this);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        bt_ver1 =  (Button) findViewById(R.id.button2);
-        bt_ver2 =  (Button) findViewById(R.id.vermais2);
-        bt_ver3 =  (Button) findViewById(R.id.vermais3);
-        bt_ver4 =  (Button) findViewById(R.id.vermais4);
-
-
-        bt_ver1.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        btn_nova_causa = findViewById(R.id.btn_nova_causa);
+
+        btn_nova_causa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, CadastroCausaActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -99,21 +104,8 @@ public class MenuActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.gotinha) {
-            if (this.getClass().getSimpleName().equals("ApeloActivity")) {
-                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            } else {
-                Intent i = new Intent(this, ApeloActivity.class);
-                startActivity(i);
-            }
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -152,5 +144,25 @@ public class MenuActivity extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClickListener(int position) {
+        //receitaDAO = new ReceitaDAO(MainActivity.this);
+       // Causa causa = receitaDAO.selectReceita(receitaList.get(position));
+        Intent intent = new Intent(MenuActivity.this, DetalheCausaActivity.class);
+
+//        intent.putExtra("position", position);
+//        intent.putExtra("id", causa.getId());
+//        intent.putExtra("nome", causa.getNome());
+//        intent.putExtra("tipoSanguineo", causa.getTipoSanguineo());
+//        intent.putExtra("tipoDoenca", causa.getTipoDoenca());
+//        intent.putExtra("descricao", causa.getDescricao());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onLongClickListener(int position) {
+
     }
 }

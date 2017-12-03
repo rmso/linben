@@ -46,9 +46,6 @@
         android:layout_alignStart="@+id/email"
         android:layout_marginTop="10dp" />
 
-
-
-
     <Button
         android:id="@+id/btn_listarUsuario"
         android:layout_height="30dp"

@@ -37,7 +37,7 @@ import java.nio.channels.FileChannel;
 /**
  * Created by Raquel on 12/05/2016.
  */
-public class ApeloActivity extends Activity {
+public class CausaActivity extends Activity {
     private Spinner estado;
     private Spinner cidade;
     private Spinner hemocentro;
@@ -75,7 +75,6 @@ public class ApeloActivity extends Activity {
             copy(source, destination);
             Bitmap thumb = ThumbnailUtils.createVideoThumbnail(videosDir.getPath() + "/1.mp4", MediaStore.Video.Thumbnails.MINI_KIND);
             BitmapDrawable bit = new BitmapDrawable(getApplicationContext().getResources(), thumb);
-            btn_camera.setBackground(bit);
         }
     }
 
@@ -115,12 +114,12 @@ public class ApeloActivity extends Activity {
 
     private void escolheVideo(){
         final CharSequence[] itens = {"Usar câmera", "Ir para galeria", "Cancelar"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(ApeloActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(CausaActivity.this);
         builder.setTitle("Adicionar foto");
         builder.setItems(itens, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                boolean resultado = Utility.checkPermission(ApeloActivity.this);
+                boolean resultado = Utility.checkPermission(CausaActivity.this);
                 if(itens[item].equals("Usar câmera")){
                     if(resultado){
                         capturarVideo();
@@ -146,16 +145,8 @@ public class ApeloActivity extends Activity {
     private Uri uri;
 
     protected void onCreate(Bundle savedInstanceState){
-        setContentView(R.layout.activity_apelo);
+       // setContentView(R.layout.activity_cadastro_causa);
         super.onCreate(savedInstanceState);
-        btn_voltar = (Button) findViewById(R.id.voltarseta);
-        btn_continuar = (Button) findViewById(R.id.concluir);
-        btn_ajuda = (Button) findViewById(R.id.ajuda);
-
-        descricao = (EditText) findViewById(R.id.descricao);
-        cidade = (Spinner) findViewById(R.id.cidade);
-        estado = (Spinner) findViewById(R.id.estado);
-        hemocentro = (Spinner) findViewById(R.id.hemocentro);
 
 
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
@@ -175,24 +166,7 @@ public class ApeloActivity extends Activity {
 
         }
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.estado,
-                android.R.layout.simple_spinner_item);
-        estado = (Spinner) findViewById(R.id.estado);
-        estado.setAdapter(adapter);
 
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
-                this, R.array.cidade1,
-                android.R.layout.simple_spinner_item);
-        cidade = (Spinner) findViewById(R.id.cidade);
-        cidade.setAdapter(adapter1);
-
-
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(
-                this, R.array.hemocentro,
-                android.R.layout.simple_spinner_item);
-        hemocentro = (Spinner) findViewById(R.id.hemocentro);
-        hemocentro.setAdapter(adapter3);
 
         btn_camera = (Button) findViewById(R.id.video);
 
@@ -206,7 +180,7 @@ public class ApeloActivity extends Activity {
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
+                                              Intent i = new Intent(CausaActivity.this, MenuActivity.class);
                                               startActivity(i);
                                           }
                                       }
@@ -218,8 +192,8 @@ public class ApeloActivity extends Activity {
                                              public void onClick(View v) {
 
                                                  inserir();
-                                                 Toast.makeText(ApeloActivity.this, "Novo apelo cadastrado", Toast.LENGTH_LONG).show();
-                                                 Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
+                                                 Toast.makeText(CausaActivity.this, "Novo apelo cadastrado", Toast.LENGTH_LONG).show();
+                                                 Intent i = new Intent(CausaActivity.this, MenuActivity.class);
                                                  startActivity(i);
                                                  }
                                              }
@@ -231,7 +205,7 @@ public class ApeloActivity extends Activity {
         btn_ajuda.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent i = new Intent(ApeloActivity.this, AjudaActivity.class);
+                                              Intent i = new Intent(CausaActivity.this, AjudaActivity.class);
                                               startActivity(i);
                                           }
                                       }
@@ -281,9 +255,6 @@ public class ApeloActivity extends Activity {
         try {
             Causa causa = new Causa();
             causa.setDescricao(descricao.getText().toString());
-            causa.setCidade(cidade.getSelectedItem().toString());
-            causa.setEstado(estado.getSelectedItem().toString());
-            causa.setHemocentro(hemocentro.getSelectedItem().toString());
 
             database.insertCausa(causa);
 
