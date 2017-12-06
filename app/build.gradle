@@ -28,10 +28,10 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26+'
     compile 'com.android.support:design:26+'
-    compile 'postgresql:postgresql:9.1-901-1.jdbc4'
-    compile 'com.google.android.gms:play-services-maps:11.0.4'
-    compile 'com.google.android.gms:play-services-location:11.0.4'
-    compile 'com.google.android.gms:play-services:11.0.4'
+    compile 'com.google.android.gms:play-services-maps:11.6.2'
+    compile 'com.google.android.gms:play-services-location:11.6.2'
+    compile 'com.google.android.gms:play-services:11.6.2'
+    compile 'com.github.jd-alexander:library:1.1.0'
     compile 'com.google.gms:google-services:3.1.2'
     testCompile 'junit:junit:4.12'
 }
