@@ -14,6 +14,13 @@ public class Causa {
     public Causa (){
     }
 
+    public Causa(String descricao, String nome, String tipoSanguineo, String tipoDoenca){
+        this.nome = nome;
+        this.descricao = descricao;
+        this.tipoSanguineo = tipoSanguineo;
+        this.tipoDoenca = tipoDoenca;
+    }
+
     public int getId() {
         return id;
     }

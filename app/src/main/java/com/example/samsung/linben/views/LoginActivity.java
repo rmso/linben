@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_login);
             try {
                 database = new DataBase(this);
-                dbActions = database.getReadableDatabase();
+                //dbActions = database.getReadableDatabase();
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
                // dlg.setMessage("Conexão criada com sucesso!");

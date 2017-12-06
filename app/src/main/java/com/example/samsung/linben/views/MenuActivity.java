@@ -52,7 +52,7 @@ public class MenuActivity extends AppCompatActivity
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_causa.setLayoutManager(linearLayoutManager);
 
-       // getReceitasFromDAO();
+       getCausaFromDB();
 
         rv_causa.setAdapter(causaAdapter);
 
@@ -94,6 +94,11 @@ public class MenuActivity extends AppCompatActivity
         }
     }
 
+    private void getCausaFromDB() {
+        dataBase = new DataBase(MenuActivity.this);
+        causaList = dataBase.buscarTodasCausas();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -124,8 +129,8 @@ public class MenuActivity extends AppCompatActivity
             } else {
                 Intent i = new Intent(this, HemocentroActivity.class);
                 startActivity(i);
-            }
-        } else if (id == R.id.nav_sobre) {
+            }}
+        else if (id == R.id.nav_sobre) {
             if (this.getClass().getSimpleName().equals("SobreActivity")) {
                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
@@ -148,17 +153,21 @@ public class MenuActivity extends AppCompatActivity
 
     @Override
     public void onClickListener(int position) {
-        //receitaDAO = new ReceitaDAO(MainActivity.this);
-       // Causa causa = receitaDAO.selectReceita(receitaList.get(position));
+        dataBase = new DataBase(MenuActivity.this);
+        Causa causa = causaList.get(position);
         Intent intent = new Intent(MenuActivity.this, DetalheCausaActivity.class);
 
-//        intent.putExtra("position", position);
-//        intent.putExtra("id", causa.getId());
-//        intent.putExtra("nome", causa.getNome());
-//        intent.putExtra("tipoSanguineo", causa.getTipoSanguineo());
-//        intent.putExtra("tipoDoenca", causa.getTipoDoenca());
-//        intent.putExtra("descricao", causa.getDescricao());
+        intent.putExtra("position", position);
+        intent.putExtra("id", causa.getId());
+        intent.putExtra("descricao", causa.getDescricao());
+        intent.putExtra("nome", causa.getNome());
+        intent.putExtra("tipo_sanguineo", causa.getTipoSanguineo());
+        intent.putExtra("tipo_doenca", causa.getTipoDoenca());
+
         startActivity(intent);
+
+
+
     }
 
     @Override

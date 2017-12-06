@@ -42,7 +42,7 @@ public class ListaUsuarioActivity extends AppCompatActivity {
 
             try {
                 database = new DataBase(this);
-                dbActions = database.getWritableDatabase();
+               // dbActions = database.getWritableDatabase();
                 adpUsuarios = database.buscarUsuario(this);
                 listViewUsuario.setAdapter(adpUsuarios);
 

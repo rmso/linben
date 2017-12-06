@@ -26,10 +26,10 @@ public class DetalheCausaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhe_causa);
 
-        tv_nome = findViewById(R.id.tv_nome);
-        tv_tipo_sanguineo = findViewById(R.id.tv_tipo_sanguineo);
-        tv_tipo_doenca = findViewById(R.id.tv_tipo_doenca);
-        tv_descricao = findViewById(R.id.tv_descricao);
+        tv_nome = findViewById(R.id.et_nome);
+        tv_tipo_sanguineo = findViewById(R.id.et_tipo_sanguineo);
+        tv_tipo_doenca = findViewById(R.id.et_tipo_doenca);
+        tv_descricao = findViewById(R.id.descricao);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -37,16 +37,17 @@ public class DetalheCausaActivity extends AppCompatActivity {
         if(bundle != null){
             position = intent.getIntExtra("position", 0);
             causa = new Causa();
-            causa.setId(bundle.getInt("id"));
-            causa.setNome(bundle.getString("nome"));
-            causa.setTipoSanguineo(bundle.getString("tipoSanguineo"));
-            causa.setTipoDoenca(bundle.getString("tipoDoenca"));
             causa.setDescricao(bundle.getString("descricao"));
+            causa.setNome(bundle.getString("nome"));
+            causa.setTipoSanguineo(bundle.getString("tipo_sanguineo"));
+            causa.setTipoDoenca(bundle.getString("tipo_doenca"));
 
-            tv_nome.setText(intent.getStringExtra("nome"));
-            tv_tipo_sanguineo.setText(intent.getStringExtra("tipoSanguineo"));
-            tv_tipo_doenca.setText(intent.getStringExtra("tipoDoenca"));
+
             tv_descricao.setText(intent.getStringExtra("descricao"));
+            tv_nome.setText(intent.getStringExtra("nome"));
+            tv_tipo_sanguineo.setText(intent.getStringExtra("tipo_sanguineo"));
+            tv_tipo_doenca.setText(intent.getStringExtra("tipo_doenca"));
+
         }
 
     }

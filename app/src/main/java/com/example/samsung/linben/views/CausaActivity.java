@@ -37,6 +37,7 @@ import java.nio.channels.FileChannel;
 /**
  * Created by Raquel on 12/05/2016.
  */
+
 public class CausaActivity extends Activity {
     private Spinner estado;
     private Spinner cidade;
@@ -156,7 +157,7 @@ public class CausaActivity extends Activity {
 
         try {
             database = new DataBase(this);
-            dbActions = database.getWritableDatabase();
+            //dbActions = database.getWritableDatabase();
 
         }catch (SQLException ex){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);

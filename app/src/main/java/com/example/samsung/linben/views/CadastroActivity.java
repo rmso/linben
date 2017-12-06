@@ -214,7 +214,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         try {
             database = new DataBase(this);
-            dbActions = database.getWritableDatabase();
+            //dbActions = database.getWritableDatabase();
 
         }catch (SQLException ex){
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);

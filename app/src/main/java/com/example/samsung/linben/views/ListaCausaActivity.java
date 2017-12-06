@@ -42,8 +42,8 @@ public class ListaCausaActivity extends AppCompatActivity {
 
 
             try {
-                database = new DataBase(this);
-                dbActions = database.getWritableDatabase();
+               database = new DataBase(this);
+                //dbActions = database.getWritableDatabase();
                 adpCausas = database.buscarCausa(this);
                 listViewCausa.setAdapter(adpCausas);
 
@@ -59,7 +59,7 @@ public class ListaCausaActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent i = new Intent(this,CausaActivity.class);
+        Intent i = new Intent(this,CadastroCausaActivity.class);
         startActivityForResult(i,CONST_TELA_TESTE1);
 
     }
