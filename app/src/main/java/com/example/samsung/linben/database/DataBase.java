@@ -91,7 +91,6 @@ public class DataBase {
 
     public void insertCausa(Causa causa){ //inserindo causa.
 
-
         ContentValues values = new ContentValues();
 
         values.put("descricao", causa.getDescricao());
@@ -99,16 +98,13 @@ public class DataBase {
         values.put("tipo_sanguineo", causa.getTipoSanguineo());
         values.put("tipo_doenca", causa.getTipoDoenca());
 
-
         db.insert("CAUSA", null, values);
     }
 
     public ArrayAdapter<Causa> buscarCausa(Context context){
 
-
-
         ArrayAdapter<Causa> adpCausas = new ArrayAdapter<Causa>(context, android.R.layout.simple_list_item_1);
-        Cursor cursor = db.query("CAUSA",null,null,null,null,null,null);
+        Cursor cursor = db.query("CAUSA",null,null,null,null,null,"nome ASC");
 
         if (cursor.getCount() > 0){
 
@@ -122,7 +118,6 @@ public class DataBase {
                 causa.setTipoDoenca(cursor.getString(4));
 
                 adpCausas.add(causa);
-
 
             } while (cursor.moveToNext());
         }
@@ -144,7 +139,6 @@ public class DataBase {
                 causa.setNome(cursor.getString(1));
                 causa.setTipoSanguineo(cursor.getString(2));
                 causa.setTipoDoenca(cursor.getString(3));
-
 
                 causaListReturn.add(causa);
             }while (cursor.moveToNext());

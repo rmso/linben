@@ -25,8 +25,6 @@ public class CausaAdapter extends RecyclerView.Adapter<CausaAdapter.CausaViewHol
     }
 
     public class CausaViewHolder extends RecyclerView.ViewHolder {
-
-
         TextView tv_nome;
         TextView tv_tipo_sanguineo;
         TextView tv_tipo_doença;

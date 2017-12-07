@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.TelecomManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.samsung.linben.R;
@@ -29,7 +30,7 @@ public class DetalheCausaActivity extends AppCompatActivity {
         tv_nome = findViewById(R.id.et_nome);
         tv_tipo_sanguineo = findViewById(R.id.et_tipo_sanguineo);
         tv_tipo_doenca = findViewById(R.id.et_tipo_doenca);
-        tv_descricao = findViewById(R.id.descricao);
+        tv_descricao = findViewById(R.id.et_descricao);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -42,13 +43,11 @@ public class DetalheCausaActivity extends AppCompatActivity {
             causa.setTipoSanguineo(bundle.getString("tipo_sanguineo"));
             causa.setTipoDoenca(bundle.getString("tipo_doenca"));
 
-
             tv_descricao.setText(intent.getStringExtra("descricao"));
             tv_nome.setText(intent.getStringExtra("nome"));
             tv_tipo_sanguineo.setText(intent.getStringExtra("tipo_sanguineo"));
             tv_tipo_doenca.setText(intent.getStringExtra("tipo_doenca"));
 
         }
-
     }
 }

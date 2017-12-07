@@ -19,7 +19,6 @@ import com.example.samsung.linben.models.Causa;
 
 public class CadastroCausaActivity extends AppCompatActivity {
 
-
     EditText et_nome;
     EditText et_tipo_sanguineo;
     EditText et_tipo_doenca;
@@ -36,27 +35,20 @@ public class CadastroCausaActivity extends AppCompatActivity {
         et_nome = (EditText) findViewById(R.id.et_nome);
         et_tipo_sanguineo = (EditText) findViewById(R.id.et_tipo_sanguineo);
         et_tipo_doenca = (EditText) findViewById(R.id.et_tipo_doenca);
-        et_descricao = (EditText) findViewById(R.id.tv_descricao);
+        et_descricao = (EditText) findViewById(R.id.et_descricao);
 
         btn_concluir = (Button) findViewById(R.id.concluir);
-
-
-
-
-
 
         btn_concluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //recuperando as informações que será passada para próxima intent
-
-                final String nome = et_nome.getText().toString();
-                final String tipo_sanguineo = et_tipo_sanguineo.getText().toString();
-                final String tipo_doenca = et_tipo_doenca.getText().toString();
-                final String descricao = et_descricao.getText().toString();
+                String nome = et_nome.getText().toString();
+                String tipo_sanguineo = et_tipo_sanguineo.getText().toString();
+                String tipo_doenca = et_tipo_doenca.getText().toString();
+                String descricao = et_descricao.getText().toString();
 
                 Intent intent = new Intent(CadastroCausaActivity.this, MenuActivity.class);
-
 
                 intent.putExtra("nome", nome);
                 intent.putExtra("tipo_sanguineo", tipo_sanguineo);
@@ -65,12 +57,9 @@ public class CadastroCausaActivity extends AppCompatActivity {
 
                 dataBase = new DataBase(CadastroCausaActivity.this);
 
-                Causa causa = new Causa(nome,descricao,tipo_sanguineo,tipo_doenca);
+                Causa causa = new Causa(descricao, nome,tipo_sanguineo,tipo_doenca);
                 dataBase.insertCausa(causa);
-
-
                 startActivity(intent);
-
             }
         });
 

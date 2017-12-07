@@ -52,7 +52,7 @@ public class MenuActivity extends AppCompatActivity
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_causa.setLayoutManager(linearLayoutManager);
 
-       getCausaFromDB();
+        getCausaFromDB();
 
         rv_causa.setAdapter(causaAdapter);
 
@@ -129,14 +129,14 @@ public class MenuActivity extends AppCompatActivity
             } else {
                 Intent i = new Intent(this, HemocentroActivity.class);
                 startActivity(i);
-            }}
+                    }}
         else if (id == R.id.nav_sobre) {
             if (this.getClass().getSimpleName().equals("SobreActivity")) {
                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
                 Intent i = new Intent(this, SobreActivity.class);
                 startActivity(i);
-            }
+                       }
 
         }else if (id == R.id.nav_ajuda) {
             if (this.getClass().getSimpleName().equals("AjudaActivity")) {
@@ -144,11 +144,18 @@ public class MenuActivity extends AppCompatActivity
             } else {
                 Intent i = new Intent(this, AjudaActivity.class);
                 startActivity(i);
-            }
+                       }
         }
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onResume();
+        getCausaFromDB();
+        causaAdapter.mudarListaAdapter(causaList);
     }
 
     @Override
@@ -165,9 +172,6 @@ public class MenuActivity extends AppCompatActivity
         intent.putExtra("tipo_doenca", causa.getTipoDoenca());
 
         startActivity(intent);
-
-
-
     }
 
     @Override

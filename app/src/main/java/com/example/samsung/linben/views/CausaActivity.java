@@ -149,11 +149,9 @@ public class CausaActivity extends Activity {
        // setContentView(R.layout.activity_cadastro_causa);
         super.onCreate(savedInstanceState);
 
-
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // aqui cria o diretório onde salva as imagens de perfil
         videosDir = cw.getDir("videos", Context.MODE_PRIVATE);
-
 
         try {
             database = new DataBase(this);
@@ -166,8 +164,6 @@ public class CausaActivity extends Activity {
             dlg.show();
 
         }
-
-
 
         btn_camera = (Button) findViewById(R.id.video);
 
@@ -196,6 +192,7 @@ public class CausaActivity extends Activity {
                                                  Toast.makeText(CausaActivity.this, "Novo apelo cadastrado", Toast.LENGTH_LONG).show();
                                                  Intent i = new Intent(CausaActivity.this, MenuActivity.class);
                                                  startActivity(i);
+                                                 finish();
                                                  }
                                              }
 
@@ -208,6 +205,7 @@ public class CausaActivity extends Activity {
                                           public void onClick(View v) {
                                               Intent i = new Intent(CausaActivity.this, AjudaActivity.class);
                                               startActivity(i);
+                                              finish();
                                           }
                                       }
         );

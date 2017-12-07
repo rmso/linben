@@ -29,6 +29,7 @@ public class SobreActivity extends AppCompatActivity {
                                            public void onClick(View v) {
                                                Intent i = new Intent(SobreActivity.this, MenuActivity.class);
                                                startActivity(i);
+                                               finish();
                                            }
                                        }
         );
@@ -39,6 +40,7 @@ public class SobreActivity extends AppCompatActivity {
                                           public void onClick(View v) {
                                               Intent i = new Intent(SobreActivity.this, AjudaActivity.class);
                                               startActivity(i);
+                                              finish();
                                           }
                                       }
         );

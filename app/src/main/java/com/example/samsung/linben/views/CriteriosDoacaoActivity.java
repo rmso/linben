@@ -30,6 +30,7 @@ public class CriteriosDoacaoActivity extends AppCompatActivity {
                                           public void onClick(View v) {
                                               Intent i = new Intent(CriteriosDoacaoActivity.this, AjudaActivity.class);
                                               startActivity(i);
+                                              finish();
                                           }
                                       }
         );

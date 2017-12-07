@@ -55,6 +55,8 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
     LatLng latLngHemope;
     GoogleApiClient mGoogleApiClient;
     private List<Polyline> polylines;
+    CameraPosition position;
+    CameraUpdate update;
 
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 1;
 
@@ -71,6 +73,15 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
 
         polylines = new ArrayList<>();
 
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_LOCATION);
+        }
+
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -82,7 +93,6 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
         tv_link = findViewById(R.id.tv_link);
 
         tv_link.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HemocentroActivity.this, WebViewActivity.class);
@@ -96,8 +106,8 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
                 stopLocationUpdates();
                 mMap.clear();
 
-                CameraPosition position = new CameraPosition.Builder().target(latLngHemope).zoom(12).build();
-                CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
+                position = new CameraPosition.Builder().target(latLngHemope).zoom(12).build();
+                update = CameraUpdateFactory.newCameraPosition(position);
 
                 mMap.addMarker(new MarkerOptions().position(latLngHemope).title("Hemope"));
                 mMap.addMarker(new MarkerOptions().position(latLng).title("Você").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
@@ -154,8 +164,8 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
 
         mMap.clear();
 
-        CameraPosition position = new CameraPosition.Builder().target(latLngHemope).zoom(17).build();
-        CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
+        position = new CameraPosition.Builder().target(latLngHemope).zoom(17).build();
+        update = CameraUpdateFactory.newCameraPosition(position);
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLngHemope)
@@ -197,7 +207,6 @@ public class HemocentroActivity extends AppCompatActivity implements OnMapReadyC
         } else {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
-
 
     }
 
