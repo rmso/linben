@@ -160,7 +160,6 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void onCaptureImageResult(Intent data) throws IOException {
-        imageView = (ImageView) findViewById(R.id.imageView);
         Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         thumbnail.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
@@ -241,17 +240,6 @@ public class CadastroActivity extends AppCompatActivity {
         dataNascimento = (EditText) findViewById(R.id.dataN);
         //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
 
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.tipo_sanguineo,
-                android.R.layout.simple_spinner_item);
-        tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
-        tipo_sanguineo.setAdapter(adapter);
-
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
-                this, R.array.sexo,
-                android.R.layout.simple_spinner_item);
-        genero = (Spinner) findViewById(R.id.sexo);
-        genero.setAdapter(adapter1);
 
 
         /*btn_foto = (Button) findViewById(R.id.camera);

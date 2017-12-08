@@ -30,7 +30,7 @@ import java.util.List;
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, RecycleViewClickHack {
     DrawerLayout drawer;
-    FloatingActionButton btn_nova_causa;
+    Button btn_nova_causa;
 
     RecyclerView rv_causa;
 

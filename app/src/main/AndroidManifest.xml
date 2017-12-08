@@ -18,6 +18,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".views.LoginActivity" />
         <activity android:name=".views.CadastroActivity" />
         <activity android:name=".views.CausaActivity" />
@@ -47,7 +48,6 @@
         <activity android:name=".views.CriteriosDoacaoActivity" />
         <activity
             android:name=".views.MenuActivity"
-            android:label="@string/title_activity_menu"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

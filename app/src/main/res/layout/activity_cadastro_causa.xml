@@ -81,6 +81,7 @@
         android:id="@+id/et_descricao"
         android:layout_below="@+id/tv_descricao"
         android:textColor="@color/colorMain"
+        android:text="Descrição da situação"
         android:gravity="top" />
 
     <Button
@@ -89,7 +90,10 @@
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/concluircad"
+        android:text="Concluir"
+        android:background="@android:color/white"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         android:layout_marginBottom="5dp"/>
 
 </RelativeLayout>

@@ -2,48 +2,6 @@
     <string name="app_name">Linben</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="tipo_sanguineo" color="#B80E29">
-        <item>A+</item>
-        <item>A-</item>
-        <item>B+</item>
-        <item>B-</item>
-        <item>O+</item>
-        <item>O-</item>
-        <item>AB+</item>
-        <item>AB-</item>
-    </string-array>
-
-    <string-array name="sexo" color="#B80E29">
-        <item>Feminino</item>
-        <item>Masculino</item>
-    </string-array>
-
-    <string-array name="categoria" color="#B80E29">
-        <item>Feminino</item>
-        <item>Masculino</item>
-    </string-array>
-
-    <string-array name="estado">
-        <item>PE</item>
-    </string-array>
-
-    <string-array name="cidade" color="#B80E29">
-        <item>Recife</item>
-        <item>Olinda</item>
-        <item>Jaboatão</item>
-        <item>Camaragibe</item>
-        <item>Paulista</item>
-        <item>Moreno</item>
-    </string-array>
-
-    <string-array name="cidade1" color="#B80E29">
-        <item>Recife</item>
-    </string-array>
-
-    <string-array name="hemocentro" color="#B80E29">
-        <item>HEMOPE</item>
-        <item>IHENE</item>
-    </string-array>
     <string name="title_activity_menu"></string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
