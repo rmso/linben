@@ -65,4 +65,30 @@ public class Causa {
         return " Descrição: " +descricao + "Nome: " +nome + "Tipo Sanguineo: " +tipoSanguineo + "Tipo de Doença:" + tipoDoenca;
     }
 
+    public boolean validacaoTipoSanguineo(){
+        boolean resultado = false;
+
+        if (this.tipoSanguineo.equals("A+") || this.tipoSanguineo.equals("A-") || this.tipoSanguineo.equals("B+") || this.tipoSanguineo.equals("B-")
+                || this.tipoSanguineo.equals("AB+") || this.tipoSanguineo.equals("AB-") || this.tipoSanguineo.equals("O-") || this.tipoSanguineo.equals("O+")){
+            resultado = true;
+        }
+
+        return resultado;
+    }
+
+    public boolean validacaoCampoDoenca(){
+        boolean resultado = false;
+        if (!this.tipoDoenca.equals("")){
+            resultado = true;
+        }
+        return resultado;
+    }
+
+    public boolean validacaoTodosCamposNulo (){
+        boolean resultado = true;
+        if(this.nome.equals("") && this.tipoDoenca.equals("")&& this.descricao.equals("")&& this.tipoSanguineo.equals("")){
+            resultado = false;
+        }
+        return resultado;
+    }
 }
