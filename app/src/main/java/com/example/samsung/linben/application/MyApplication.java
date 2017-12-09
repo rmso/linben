@@ -1,6 +1,9 @@
 package com.example.samsung.linben.application;
 
 import android.app.Application;
+
+import com.frogermcs.androiddevmetrics.AndroidDevMetrics;
+import com.frogermcs.androiddevmetrics.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
 
@@ -20,5 +23,9 @@ public class MyApplication extends Application{
         }
         LeakCanary.install(this);
         // Normal app init code...
+
+        if (BuildConfig.DEBUG) {
+            AndroidDevMetrics.initWith(this);
+        }
     }
 }
