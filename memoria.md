@@ -6,20 +6,23 @@ Foram realizadas avaliações da memória utilizando o as ferramentas Android Pr
 
 ### Android Profiler
 O uso da memória variou entre 50 MB e 140 MB com maiores picos quando clicado na página web do hemocentro. Com minutos de uso da memória do aplicativo estabilizou em 100 MB.
-#### Página principal 
+#### [Página principal](https://github.com/rmso/linben/blob/master/imagensAnalise/hemocentroMemoria.PNG) 
 O uso da memória quando na página principal ficou em torno de 50 - 51MB
-#### Criar Causa
-Ao criar uma causa o uso da memória varia entre 60 - 70 MB 
-#### Ver detalhes
+
+#### [Criar Causa](https://github.com/rmso/linben/blob/master/imagensAnalise/criarMemoria.PNG)
+Ao criar uma causa o uso da memória aumenta e fica entre 60 - 70 MB 
+#### [Ver detalhes](https://github.com/rmso/linben/blob/master/imagensAnalise/verDetalhesMem.PNG)
 O uso de ver detalhes de uma causa ocasiona um aumento de memória de 7MB, ficando em torno de 57MB 
-#### Ir para Hemocentro 
- Abrindo a página de hemocentros a memória tem um pico para 81MB
-- Traçar rota
-- Pagina web:
+#### [Ir para Hemocentro](https://github.com/rmso/linben/blob/master/imagensAnalise/hemocentroMemoria.PNG)
+Abrindo a página de hemocentros a memória tem um pico para 81MB
+
+- Traçar rota:
+- [Pagina web:](https://github.com/rmso/linben/blob/master/imagensAnalise/paginaWebmemoria.PNG)
     Ao abrir a webview a memória registra o maior pico, na faixa de 140 MB
+   
 
 
-### LeakCanary 
+### [LeakCanary](https://github.com/rmso/linben/blob/master/imagensAnalise/leakCanary.PNG)
 
 O leak canary acusou um leak de memória quando a web view, em Hemocentro, é aberta.
 
