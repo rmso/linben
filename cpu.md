@@ -1,8 +1,22 @@
-## Página principal 
-## Criar Causa
-## Ver detalhes
-## Ir para ajuda
-## Ir para sobre 
-## Ir para Hemocentro 
+# CPU
+
+## Análise 
+Para a análise da CPU foi utilizado o Android Profiler. 
+
+### [Página principal](https://github.com/rmso/linben/blob/master/imagensAnalise/pagPrincipalCpu2.PNG)
+Em segundo plano e assim que aberta a página principal chegou até 20% do uso da cpu.
+
+### [Criar Causa](https://github.com/rmso/linben/blob/master/imagensAnalise/CriandoCausaCpu.PNG)
+Criando uma causa o uso da CPU chega até 60% de consumo.
+
+### [Ver detalhes](https://github.com/rmso/linben/blob/master/imagensAnalise/DetalhesCpu.PNG)
+A navegação entre ver os detalhes das causas cadastradas fez com que a CPU variasse entre 40 e 53 %
+
+### [Ir para ajuda](https://github.com/rmso/linben/blob/master/imagensAnalise/ajudaCPU.PNG)
+A navegação até ajuda variou mais ao abrir a activity de ajuda e a navegação na lista. No maximo chegando a 46%. 
+
+### [Hemocentro](https://github.com/rmso/linben/blob/master/imagensAnalise/hemocentroCPU.PNG)
+A navegação até a activity de hemocentro foi onde tinha mais gasto de CPU, sempre com valores altos, chegando a 82% de uso da cpu.
 - Traçar rota
-- Pagina web
+- [Pagina web](https://github.com/rmso/linben/blob/master/imagensAnalise/paginaWebCpu.PNG) : Onde teve o pico maior do uso de cpu foi na abertura da webView, a cpu chegou a 46% de uso
+
