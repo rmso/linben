@@ -2,16 +2,13 @@ package com.example.samsung.linben.application;
 
 import android.app.Application;
 
-import com.frogermcs.androiddevmetrics.AndroidDevMetrics;
-import com.frogermcs.androiddevmetrics.BuildConfig;
 import com.squareup.leakcanary.LeakCanary;
 
-
 /**
- * Created by Samsung on 09/12/2017.
+ * Created by Samsung on 10/12/2017.
  */
 
-public class MyApplication extends Application{
+public class MyApplication extends Application {
 
     @Override public void onCreate() {
         super.onCreate();
@@ -21,11 +18,12 @@ public class MyApplication extends Application{
             // You should not init your app in this process.
             return;
         }
+
         LeakCanary.install(this);
         // Normal app init code...
 
-        if (BuildConfig.DEBUG) {
-            AndroidDevMetrics.initWith(this);
-        }
+      //  if (BuildConfig.DEBUG) {
+       //     AndroidDevMetrics.initWith(this);
+      //  }
     }
 }
