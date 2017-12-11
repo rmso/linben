@@ -1,7 +1,9 @@
 # CPU
 
 ## Análise 
-Para a análise da CPU foi utilizado o Android Profiler. 
+Para a análise da CPU foi utilizado o Android Profiler e o PowerTutor. 
+
+### Android Profiler
 
 ### [Página principal](https://github.com/rmso/linben/blob/master/imagensAnalise/pagPrincipalCpu2.PNG)
 Em segundo plano e assim que aberta a página principal chegou até 20% do uso da cpu.
@@ -20,3 +22,6 @@ A navegação até a activity de hemocentro foi onde tinha mais gasto de CPU, se
 - Traçar rota
 - [Pagina web](https://github.com/rmso/linben/blob/master/imagensAnalise/paginaWebCpu.PNG) : Onde teve o pico maior do uso de cpu foi na abertura da webView, a cpu chegou a 46% de uso
 
+### PowerTutor 
+No power tudo fizemos uma análise mais geral do funcionamento do aplicativo.
+- [Navegando pela página principal, detalhes e criar](https://github.com/rmso/linben/blob/0d9bcf92530b1f6b6b13aa0326e8f4e3ae8f2b0f/imagensAnalise/cpuPowerTutor.png)
