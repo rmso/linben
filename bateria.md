@@ -1,8 +1,5 @@
-## Página principal 
-## Criar Causa
-## Ver detalhes
-## Ir para ajuda
-## Ir para sobre 
-## Ir para Hemocentro 
- - Traçar rota
- - Pagina web
+# Bateria
+Foi analisada o desempenho da bateria utilizando o PowerTutor, que mostra o consumo de bateria feito pelo aplicativo.
+
+## [Página principal, Criar e ver detalhes](https://github.com/rmso/linben/blob/0d9bcf92530b1f6b6b13aa0326e8f4e3ae8f2b0f/imagensAnalise/bateria.png)
+Quando navegado nessas features o consumo de bateria do aplicativo foi 49mW
