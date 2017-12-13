@@ -56,8 +56,10 @@ Abrindo a página de hemocentros a memória tem um pico para no minimo 143,2MB e
 
 
 ## LeakCanary
+O leak canary acusou um leak de memória em hemocentro quando a web view é aberta e na webview.
 
-O leak canary acusou um leak de memória em [hemocentro](https://github.com/rmso/linben/blob/master/imagensAnalise/leakCanary.PNG) quando a web view é aberta e na [WebView](https://github.com/rmso/linben/blob/master/imagensAnalise/leakWebView.PNG). 
+![](https://github.com/rmso/linben/blob/master/imagensAnalise/leakCanary.PNG) 
+![](https://github.com/rmso/linben/blob/master/imagensAnalise/leakWebView.PNG)
 
 
 ## Boas práticas 
