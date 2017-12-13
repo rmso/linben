@@ -55,7 +55,7 @@ public class MenuActivity extends AppCompatActivity
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv_causa.setLayoutManager(linearLayoutManager);
 
-        getCausaFromDB();
+       // getCausaFromDB();
 
         causaAdapter = new CausaAdapter(causaList);
         rv_causa.setAdapter(causaAdapter);
@@ -169,19 +169,27 @@ public class MenuActivity extends AppCompatActivity
     }
 
     @Override
-    public void onClickListener(int position) {
-       // dataBase = new DataBase(MenuActivity.this);
-        Causa causa = causaList.get(position);
-        Intent intent = new Intent(MenuActivity.this, DetalheCausaActivity.class);
+    public void onClickListener(final int position) {
+      //  dataBase = new DataBase(MenuActivity.this);
+        viewModel.getItemCausaList().observe(MenuActivity.this, new Observer<List<Causa>>() {
+            @Override
+            public void onChanged(@Nullable List<Causa> itemCausa) {
+                Causa causa = itemCausa.get(position);
+                Intent intent = new Intent(MenuActivity.this, DetalheCausaActivity.class);
 
-        intent.putExtra("position", position);
-        intent.putExtra("id", causa.getId());
-        intent.putExtra("descricao", causa.getDescricao());
-        intent.putExtra("nome", causa.getNome());
-        intent.putExtra("tipo_sanguineo", causa.getTipoSanguineo());
-        intent.putExtra("tipo_doenca", causa.getTipoDoenca());
+                intent.putExtra("position", position);
+                intent.putExtra("id", causa.getId());
+                intent.putExtra("descricao", causa.getDescricao());
+                intent.putExtra("nome", causa.getNome());
+                intent.putExtra("tipo_sanguineo", causa.getTipoSanguineo());
+                intent.putExtra("tipo_doenca", causa.getTipoDoenca());
 
-        startActivity(intent);
+                startActivity(intent);
+            }
+        });
+
+       // Causa causa = causaList.get(position);
+
     }
 
     @Override
