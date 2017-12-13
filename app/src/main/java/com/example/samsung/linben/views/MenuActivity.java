@@ -1,8 +1,11 @@
 package com.example.samsung.linben.views;
 
 import android.app.FragmentManager;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +24,7 @@ import android.widget.ListView;
 import com.example.samsung.linben.R;
 import com.example.samsung.linben.database.DataBase;
 import com.example.samsung.linben.models.Causa;
+import com.example.samsung.linben.models.CausaViewModel;
 import com.example.samsung.linben.views.adapters.CausaAdapter;
 import com.example.samsung.linben.views.adapters.RecycleViewClickHack;
 
@@ -29,15 +33,14 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, RecycleViewClickHack {
+
     DrawerLayout drawer;
     Button btn_nova_causa;
-
     RecyclerView rv_causa;
-
     CausaAdapter causaAdapter;
     List<Causa> causaList;
-
     DataBase dataBase;
+    CausaViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +57,18 @@ public class MenuActivity extends AppCompatActivity
 
         getCausaFromDB();
 
-        rv_causa.setAdapter(causaAdapter);
-
         causaAdapter = new CausaAdapter(causaList);
         rv_causa.setAdapter(causaAdapter);
         causaAdapter.setRecycleViewClick(this);
+
+        viewModel = ViewModelProviders.of(this).get(CausaViewModel.class);
+
+        viewModel.getItemCausaList().observe(MenuActivity.this, new Observer<List<Causa>>() {
+            @Override
+            public void onChanged(@Nullable List<Causa> itemCausa) {
+                causaAdapter.mudarListaAdapter(itemCausa);
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -160,7 +170,7 @@ public class MenuActivity extends AppCompatActivity
 
     @Override
     public void onClickListener(int position) {
-        dataBase = new DataBase(MenuActivity.this);
+       // dataBase = new DataBase(MenuActivity.this);
         Causa causa = causaList.get(position);
         Intent intent = new Intent(MenuActivity.this, DetalheCausaActivity.class);
 

@@ -1,6 +1,7 @@
 package com.example.samsung.linben.views.adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.ViewUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,9 +63,10 @@ public class CausaAdapter extends RecyclerView.Adapter<CausaAdapter.CausaViewHol
 
     @Override
     public void onBindViewHolder(CausaViewHolder holder, int position) {
-        holder.tv_nome.setText(causaList.get(position).getNome());
-        holder.tv_tipo_sanguineo.setText(causaList.get(position).getTipoSanguineo());
-        holder.tv_tipo_doença.setText(causaList.get(position).getTipoDoenca());
+        Causa causa = causaList.get(position);
+        holder.tv_nome.setText(causa.getNome());
+        holder.tv_tipo_sanguineo.setText(causa.getTipoSanguineo());
+        holder.tv_tipo_doença.setText(causa.getTipoDoenca());
     }
 
     @Override

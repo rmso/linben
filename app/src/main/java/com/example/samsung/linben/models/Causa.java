@@ -1,10 +1,15 @@
 package com.example.samsung.linben.models;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 /**
  * Created by Raquel on 04/07/2016.
  */
+@Entity
 public class Causa {
 
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String descricao;
     private String nome;

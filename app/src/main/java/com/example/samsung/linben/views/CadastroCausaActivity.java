@@ -1,5 +1,6 @@
 package com.example.samsung.linben.views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import com.example.samsung.linben.R;
 import com.example.samsung.linben.database.DataBase;
 import com.example.samsung.linben.models.Causa;
+import com.example.samsung.linben.models.CausaViewModel;
 
 /**
  * Created by Raquel on 03/12/2017.
@@ -24,7 +26,9 @@ public class CadastroCausaActivity extends AppCompatActivity {
     EditText et_tipo_doenca;
     EditText et_descricao;
     Button btn_concluir;
-    DataBase dataBase;
+    //DataBase dataBase;
+
+    private CausaViewModel causaViewModel;
 
 
     @Override
@@ -36,6 +40,8 @@ public class CadastroCausaActivity extends AppCompatActivity {
         et_tipo_sanguineo = (EditText) findViewById(R.id.et_tipo_sanguineo);
         et_tipo_doenca = (EditText) findViewById(R.id.et_tipo_doenca);
         et_descricao = (EditText) findViewById(R.id.et_descricao);
+
+        causaViewModel = ViewModelProviders.of(this).get(CausaViewModel.class);
 
         btn_concluir = (Button) findViewById(R.id.concluir);
 
@@ -55,10 +61,12 @@ public class CadastroCausaActivity extends AppCompatActivity {
                 intent.putExtra("tipo_doenca", tipo_doenca);
                 intent.putExtra("descricao", descricao);
 
-                dataBase = new DataBase(CadastroCausaActivity.this);
+                causaViewModel.addModel(new Causa(descricao, nome, tipo_sanguineo, tipo_doenca));
 
-                Causa causa = new Causa(descricao, nome,tipo_sanguineo,tipo_doenca);
-                dataBase.insertCausa(causa);
+                //dataBase = new DataBase(CadastroCausaActivity.this);
+
+               //Causa causa = new Causa(descricao, nome,tipo_sanguineo,tipo_doenca);
+                //dataBase.insertCausa(causa);
                 startActivity(intent);
             }
         });
