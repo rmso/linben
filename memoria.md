@@ -47,6 +47,7 @@ Abrindo a página de hemocentros a memória tem um pico para no minimo 143,2MB e
 ![](https://github.com/rmso/linben/blob/master/imagensAnalise/hemocentroMemoria.PNG)
 
 - Traçar rota: Indo para a página de traçar rota, dentro de hemocentros, o uso da memória fica entre 151,13MB e 161,47MB
+
   ![](https://github.com/rmso/linben/blob/master/imagensAnalise/tracarRotaMemoria.PNG)
 - Pagina web: Ao abrir a webview a memória registra o maior pico, na faixa de 212,76MB
  ![](https://github.com/rmso/linben/blob/master/imagensAnalise/verSiteMemoria.PNG)
