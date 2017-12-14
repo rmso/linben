@@ -1,5 +1,5 @@
 # Bateria
-Foi analisada o desempenho da bateria utilizando o PowerTutor, que mostra o consumo de bateria feito pelo aplicativo.
+Foi analisada o desempenho da bateria utilizando o PowerTutor, que mostra o consumo de bateria feito pelo aplicativo .Essa analise foi feita num celular Motorola G2.
 
 ## Página principal, Criar e ver detalhes
 Quando navegado nessas features o consumo de bateria do aplicativo foi 49mW
